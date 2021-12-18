@@ -1,0 +1,54 @@
+"Games"
+{
+	"tf"
+	{
+		"Functions"
+		{
+			"CTFPlayer_IsAllowedToTaunt"
+			{
+				"signature"		"CTFPlayer_IsAllowedToTaunt"
+				"callconv"		"thiscall"
+				"return"		"bool"
+				"this"			"entity"
+			}
+
+			"CTFPlayer_IsAllowedToInitiateTauntWithPartner"
+			{
+				"signature"		"CTFPlayer_IsAllowedToInitiateTauntWithPartner"
+				"callconv"		"thiscall"
+				"return"		"bool"
+				"this"			"entity"
+
+				"arguments"
+				{
+					"pEconItemView"
+					{
+						"type"	"objectptr"
+					}
+					"pszErrorMessage"
+					{
+						"type"	"charptr"
+					}
+					"cubErrorMessage"
+					{
+						"type"	"int"
+					}
+				}
+			}
+		}
+
+		"Signatures"
+		{
+			"CTFPlayer_IsAllowedToTaunt"
+			{
+				"library"		"server"
+				"linux"			"@_ZN9CTFPlayer16IsAllowedToTauntEv"
+			}
+			"CTFPlayer_IsAllowedToInitiateTauntWithPartner"
+			{
+				"library"		"server"
+				"linux"			"@_ZN9CTFPlayer35IsAllowedToInitiateTauntWithPartnerEPK13CEconItemViewPci"
+			}
+		}
+	}
+}
