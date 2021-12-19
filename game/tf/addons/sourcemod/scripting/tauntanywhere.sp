@@ -37,7 +37,7 @@ public Plugin myinfo =
 	name		= "[TF2] Taunt Anywhere",
 	author		= "Andrew \"andrewb\" Betson",
 	description	= "Removes certain restrictions on where/when players can taunt (i.e high-fiving while facing a wall)",
-	version		= "1.0",
+	version		= "1.0.1",
 	url			= "https://www.github.com/AndrewBetson/TF-TauntAnywhere"
 };
 
@@ -71,6 +71,12 @@ public void OnPluginStart()
 	sv_tauntanywhere_allow_cloaked_or_disguised_spies	= CreateConVar( "sv_tauntanywhere_allow_cloaked_or_disguised_spies", "0", "Allow Spies to taunt while cloaked and/or disguised." );
 	sv_tauntanywhere_really_anywhere					= CreateConVar( "sv_tauntanywhere_really_anywhere", "0", "Remove all restrictions on taunting. Very buggy, enable at your own risk." );
 	AutoExecConfig( true, "tauntanywhere" );
+}
+
+public void OnPluginEnd()
+{
+	DHookDisableDetour( g_hDetour_IsAllowedToTaunt, false, Detour_IsAllowedToTaunt );
+	DHookDisableDetour( g_hDetour_IsAllowedToInitiateTauntWithPartner, false, Detour_IsAllowedToInitiateTauntWithPartner );
 }
 
 public MRESReturn Detour_IsAllowedToTaunt( int nClientID, DHookReturn hReturn, DHookParam hParams )
