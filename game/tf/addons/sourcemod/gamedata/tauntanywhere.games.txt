@@ -35,6 +35,14 @@
 					}
 				}
 			}
+
+			"CTFPlayer_ShouldStopTaunting"
+			{
+				"signature"		"CTFPlayer_ShouldStopTaunting"
+				"callconv"		"thiscall"
+				"return"		"bool"
+				"this"			"entity"
+			}
 		}
 
 		"Signatures"
@@ -48,6 +56,11 @@
 			{
 				"library"		"server"
 				"linux"			"@_ZN9CTFPlayer35IsAllowedToInitiateTauntWithPartnerEPK13CEconItemViewPci"
+			}
+			"CTFPlayer_ShouldStopTaunting"
+			{
+				"library"		"server"
+				"linux"			"@_ZN9CTFPlayer18ShouldStopTauntingEv"
 			}
 		}
 	}
